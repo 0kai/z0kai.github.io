@@ -54,7 +54,7 @@
       get.addEventListener('click', function (event) {
         event.preventDefault();
         getLocalStorage('mobile').then(function(val) {
-	  document.getElementById('tel').innerHTML="新文本!";
+	  document.getElementById('tel').innerHTML=val;
 	});;
       })
     </script>
