@@ -11,6 +11,7 @@
         text-align: center;
       }
       button {
+	display: block;
         width: 100px;
         height: 40px;
         margin: 10px auto;
@@ -22,19 +23,35 @@
     <h1>跳转Native测试</h1>
     <button id="news">资讯</button>
     <button id="stockDetail">个股详情页</button>
+    <button id="save">存入本地</button> 
+    <button id="get">获取本地</button>
     <script>
-      var goToRnId = document.getElementById('news');
-      goToRnId.addEventListener('click', function (event) {
+      var news = document.getElementById('news');
+      news.addEventListener('click', function (event) {
         event.preventDefault();
         goNative({ routerName: 'NewsDetail' });
       });
-      goToRnId = document.getElementById('stockDetail');
-      goToRnId.addEventListener('click', function (event) {
+	    
+      var stockDetail = document.getElementById('stockDetail');
+      stockDetail.addEventListener('click', function (event) {
         event.preventDefault();
         goNative({
           routerName: 'StockDetail',
           params: {stockItem: { title: '上证指数', prod_code: '000001' }},
         });
+      })
+	    
+      var save = document.getElementById('save');
+      save.addEventListener('click', function (event) {
+        event.preventDefault();
+        saveLocalStorage('mobile', '15759580000');
+      })
+	    
+      var get = document.getElementById('get');
+      get.addEventListener('click', function (event) {
+        event.preventDefault();
+        var mobile = getLocalStorage('mobile');
+	alert(mobile);
       })
     </script>
   </body>
