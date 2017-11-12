@@ -17,6 +17,7 @@
         margin: 10px auto;
 	background-color: '#f1f1f1';
       }
+     p { text-align: center; }
     </style>
   </head>
   <body>
@@ -25,6 +26,7 @@
     <button id="stockDetail">个股详情页</button>
     <button id="save">存入本地</button> 
     <button id="get">获取本地</button>
+	  <p><span>电话：</span><span id="tel"></span></p>
     <script>
       var news = document.getElementById('news');
       news.addEventListener('click', function (event) {
@@ -51,7 +53,7 @@
       get.addEventListener('click', function (event) {
         event.preventDefault();
         getLocalStorage('mobile').then(function(val) {
-	  alert(val); // 3
+	  document.getElementById('tel').innerHTML(val);
 	});;
       })
     </script>
