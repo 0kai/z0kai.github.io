@@ -50,8 +50,9 @@
       var get = document.getElementById('get');
       get.addEventListener('click', function (event) {
         event.preventDefault();
-        var mobile = getLocalStorage('mobile');
-	alert(mobile);
+        getLocalStorage('mobile').then(function(val) {
+	  alert(val); // 3
+	});;
       })
     </script>
   </body>
