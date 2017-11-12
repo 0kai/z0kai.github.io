@@ -54,8 +54,9 @@
       get.addEventListener('click', function (event) {
         event.preventDefault();
         getLocalStorage('mobile').then(function(val) {
+		alert(val);
 	  document.getElementById('tel').innerHTML=val;
-	});;
+	});
       })
     </script>
   </body>
